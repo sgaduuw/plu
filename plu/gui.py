@@ -115,14 +115,14 @@ class MyGUI(QMainWindow):
 
     def send_email(self):
         smtp_connection = "smtp-mail.outlook.com"
-        skillsoft_email = "skillsoft_course_27112023@hotmail.com"
-        skillsoft_password = "Sk1lls0ft_C0urs3_27112023"
+        skillsoft_email = "email"
+        skillsoft_password = "password"
 
         email_connection = sm.SMTP(host=smtp_connection, port=25)
         email_connection.starttls()
         email_connection.login(user = skillsoft_email, password = skillsoft_password)
 
-        my_destination_email = "ewesemann@init1.nl, Nick.Wortel@hotmail.com"
+        my_destination_email = "<insert email here"
 
         
         aantal_paraplus = df_transactions['amount'].sum()
