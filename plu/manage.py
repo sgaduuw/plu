@@ -1,5 +1,7 @@
 from plu.database import Base, engine, SessionLocal
 from plu.models import Group, User, Transactions
+from passlib.context import CryptContext
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 db = SessionLocal()
 
@@ -25,16 +27,18 @@ def ensure_eelco():
         print('Adding user eelco')
         eelco = User(
             username='eelco',
-            set_password='qwerty0101qaz',
+            password='qqq',
             email='eelco@init1.nl',
             group_id=1
         )
         print(eelco)
         db.add(eelco)
         db.commit()
+        print(pwd_context.hash(eelco.password))
 
 
 if __name__ == "__main__":
     create_tables()
     ensure_groups()
     ensure_eelco()
+    
