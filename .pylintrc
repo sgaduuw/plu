@@ -1,0 +1,4 @@
+[MASTER]
+
+# Disable missing class docstring check
+disable=missing-docstring
